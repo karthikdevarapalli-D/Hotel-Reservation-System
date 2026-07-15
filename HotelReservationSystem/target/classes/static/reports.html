@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Grandeur - Reports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🏨 Hotel Grandeur</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="bookings.html">My Bookings</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="reports.html" class="active">Reports</a></li>
+        </ul>
+    </nav>
+
+    <main class="mb-2">
+        <h1 class="mb-2">Executive Reports</h1>
+        
+        <div class="table-container p-2">
+            <h2 class="mb-2" style="padding:1rem;">Summary Metrics</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="reportsTable">
+                    <tr><td colspan="2">Loading reports...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="/js/app.js"></script>
+    <script>
+        async function loadReports() {
+            try {
+                const r = await fetchApi('/reports');
+                
+                document.getElementById('reportsTable').innerHTML = `
+                    <tr>
+                        <td><strong>Total Revenue (Paid)</strong></td>
+                        <td style="color:var(--secondary-color); font-weight:bold;">${formatCurrency(r.totalRevenue)}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Available Rooms</strong></td>
+                        <td>${r.availableRooms}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Occupied Rooms</strong></td>
+                        <td>${r.occupiedRooms}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cancelled Bookings</strong></td>
+                        <td>${r.cancelledBookings}</td>
+                    </tr>
+                `;
+            } catch(e) {
+                document.getElementById('reportsTable').innerHTML = '<tr><td colspan="2">Failed to load reports.</td></tr>';
+            }
+        }
+        
+        window.onload = loadReports;
+    </script>
+</body>
+</html>

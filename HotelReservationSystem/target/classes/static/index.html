@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Grandeur - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🏨 Hotel Grandeur</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="bookings.html">My Bookings</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h1>Experience Luxury and Comfort</h1>
+                <p>Book your perfect stay with us today.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="rooms.html" class="btn btn-primary">Search Rooms</a>
+                    <a href="rooms.html" class="btn btn-secondary">Explore Categories</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-2 text-center">
+            <h2 class="mb-2">Our Premium Categories</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&q=80');"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Standard Room</h3>
+                        <p class="mb-1">Perfect for solo travelers or couples looking for a cozy space.</p>
+                        <a href="rooms.html?category=STANDARD" class="btn btn-primary w-100">View Rooms</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&q=80');"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Deluxe Room</h3>
+                        <p class="mb-1">Spacious rooms with premium amenities for a comfortable stay.</p>
+                        <a href="rooms.html?category=DELUXE" class="btn btn-primary w-100">View Rooms</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80');"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Presidential Suite</h3>
+                        <p class="mb-1">Ultimate luxury and exclusive services for VIP guests.</p>
+                        <a href="rooms.html?category=SUITE" class="btn btn-primary w-100">View Rooms</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mt-2 text-center" style="padding: 4rem 2rem; background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow);">
+            <h2>World-class Services</h2>
+            <p style="color: var(--text-light); margin-top: 1rem; max-width: 600px; margin-inline: auto;">
+                Enjoy complimentary Wi-Fi, 24/7 room service, pool access, spa treatments, and exquisite dining directly at Hotel Grandeur.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hotel Grandeur System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
